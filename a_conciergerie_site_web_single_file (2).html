@@ -1,149 +1,212 @@
-<!--
-Fichier: index.html
-Description: Site web one-page responsive pour "A+ Conciergerie" (Pointe-Noire)
-Instructions d'utilisation:
-1. Télécharge ce fichier comme `index.html` dans un dossier.
-2. Place le logo fourni sous le nom `logo.png` dans le même dossier.
-3. Pour héberger gratuitement:
-   - Option simple: GitHub Pages -> créer un dépôt, ajouter index.html, activer GitHub Pages.
-   - Option alternative: Netlify ou Vercel (drag & drop ou connexion Git).
-4. Les textes, contacts et liens sont déjà configurés.
--->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A+ Conciergerie — Pointe-Noire</title>
-  <meta name="description" content="A+ Conciergerie — Conciergerie premium à Pointe-Noire. Ménage professionnel, gestion d'appartements et location de voitures. Service haut de gamme.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A+ Conciergerie – Pointe-Noire</title>
   <style>
-    :root{
-      --navy:#002B5B;
-      --gold:#D4AF37;
-      --white:#ffffff;
-      --muted:#f5f5f5;
-      --text:#333333;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--muted);color:var(--text);}
-    header{background:linear-gradient(180deg,var(--navy),#063058);color:var(--white);padding:36px 16px;text-align:center}
-    .container{max-width:1000px;margin:0 auto;padding:28px}
-    .brand{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
-    .brand img{width:90px;height:auto;object-fit:contain;border-radius:8px}
-    h1{font-size:28px;margin:8px 0 4px}
-    p.lead{max-width:820px;margin:12px auto 0;line-height:1.5;color:rgba(255,255,255,0.92)}
 
-    .card{background:white;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);padding:20px;margin-top:-28px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    .section{padding:6px 4px}
-    h2{color:var(--navy);margin-top:0}
-    ul{padding-left:18px}
+    header {
+      text-align: center;
+      background-color: #0b132b;
+      color: white;
+      padding: 20px 10px;
+    }
 
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{background:var(--navy);color:var(--white);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
-    .btn.secondary{background:transparent;border:2px solid var(--gold);color:var(--navy)}
+    header img {
+      width: 140px;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-    aside{padding:16px;border-left:1px dashed rgba(0,0,0,0.06)}
-    .meta{background:linear-gradient(90deg,var(--gold),#cba93a);padding:12px;border-radius:10px;color:#061c2b;font-weight:700;text-align:center}
-    .meta small{display:block;font-weight:600}
+    h1 {
+      margin: 0;
+      font-size: 1.6em;
+      color: #d4af37;
+    }
 
-    footer{padding:20px;text-align:center;color:#666;font-size:14px}
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
 
-    /* responsive */
-    @media(max-width:880px){
-      .grid{grid-template-columns:1fr}
-      .brand img{width:72px;height:auto}
+    section h2 {
+      color: #0b132b;
+      border-left: 5px solid #d4af37;
+      padding-left: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      color: #d4af37;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #d4af37;
+      color: #0b132b;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 5px;
+      font-weight: 600;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 2px solid #d4af37;
+      color: #0b132b;
+    }
+
+    aside {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    aside img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #0b132b;
+      color: white;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media(max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button.submit {
+      background-color: #0b132b;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button.submit:hover {
+      background-color: #d4af37;
+      color: #0b132b;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="container">
-      <div class="brand">
-        <img src="logo.png" alt="Logo A+ Conciergerie">
-        <div>
-          <div style="font-size:14px;letter-spacing:1px;color:var(--gold);font-weight:700">A+ CONCIERGERIE</div>
-          <h1 style="margin:0">Pointe-Noire — Conciergerie Premium</h1>
-        </div>
-      </div>
-      <p class="lead">Votre partenaire de confiance pour un service complet et haut de gamme : ménage professionnel, gestion d'appartements et location de voitures. 🌟</p>
-    </div>
+    <img src="logo.png" alt="Logo A+ Conciergerie">
+    <h1>A+ Conciergerie – Pointe-Noire</h1>
+    <p>La propreté, la confiance et le service haut de gamme à Pointe-Noire</p>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <div class="grid">
+  <main>
+    <div>
+      <section>
+        <h2>Nos Services</h2>
+        <p>Nous proposons un service complet de conciergerie :</p>
+        <ul>
+          <li>Ménage professionnel (maisons & appartements)</li>
+          <li>Gestion d’appartements – Check-in / Check-out</li>
+          <li>Location de voitures grâce à nos partenaires garages</li>
+          <li>Interventions ponctuelles et nettoyages approfondis</li>
+        </ul>
+      </section>
+
+      <section style="margin-top:20px;">
+        <h2>Pourquoi nous choisir ?</h2>
+        <ul>
+          <li>Équipe sérieuse, ponctuelle et discrète</li>
+          <li>Produits et équipements professionnels</li>
+          <li>Suivi client personnalisé</li>
+          <li>Partenariats fiables et transparents</li>
+        </ul>
+      </section>
+
+      <section style="margin-top:20px;">
+        <h2>Contact & Demande de devis</h2>
+        <p>Pour toute demande tarifaire ou réservation, contactez-nous :</p>
+
         <div>
-          <section class="section">
-            <h2>Bienvenue chez A+ Conciergerie</h2>
-            <p>Basée à <strong>Pointe-Noire (Congo)</strong>, notre conciergerie propose un service complet pour particuliers et professionnels. Nous mettons à votre disposition des <strong>femmes de ménage professionnelles</strong>, formées et expérimentées, pour assurer la propreté et le confort de vos espaces de vie.</p>
-            <p>Notre engagement : un <strong>travail de qualité</strong> réalisé avec des <strong>produits haut de gamme</strong> pour garantir un intérieur sain, soigné et accueillant 🧽✨</p>
-          </section>
-
-          <section class="section">
-            <h2>Nos services</h2>
-            <ul>
-              <li><strong>Ménage complet</strong> — Service sur mesure selon vos besoins.</li>
-              <li><strong>Gestion d'appartements</strong> — Check-in / Check-out, supervision et entretien régulier.</li>
-              <li><strong>Location de voitures</strong> — En partenariat avec des garages de confiance à Pointe-Noire.</li>
-            </ul>
-            <p>Pour une demande tarifaire, contactez-nous par <a href="mailto:jacques96@live.fr">email</a> ou <a href="tel:+33665013646">téléphone</a>.</p>
-          </section>
-
-          <section class="section">
-            <h2>Pourquoi choisir A+ Conciergerie ?</h2>
-            <ul>
-              <li>Équipe sérieuse, ponctuelle et discrète</li>
-              <li>Produits et équipements professionnels</li>
-              <li>Suivi client personnalisé</li>
-              <li>Partenariats fiables et transparents</li>
-            </ul>
-          </section>
-
-          <section class="section">
-            <h2>Contact</h2>
-            <p>📍 Basée à Pointe-Noire (Congo)</p>
-            <p>📞 Téléphone France : <strong><a href="tel:+33665013646">+33 6 65 01 36 46</a></strong><br>
-               📞 Téléphone Congo : <strong><a href="tel:+242065161819">+242 06 516 18 19</a></strong><br>
-               ✉️ Email : <a href="mailto:jacques96@live.fr">jacques96@live.fr</a><br>
-               📸 Instagram : <a href="https://www.instagram.com/aplusconcierge/" target="_blank" rel="noopener">@aplusconcierge</a></p>
-
-            <div class="cta">
-              <a class="btn" href="tel:+242065161819">Appeler maintenant</a>
-              <a class="btn secondary" href="mailto:jacques96@live.fr">Envoyer un mail</a>
-            </div>
-          </section>
+          <a class="btn" href="tel:+242065161819">📞 +242 06 516 18 19</a>
+          <a class="btn" href="tel:+33665013646">📞 +33 6 65 01 36 46</a>
+          <a class="btn ghost" href="mailto:jacques96@live.fr">✉️ jacques96@live.fr</a>
+          <a class="btn ghost" href="https://wa.me/242065161819" target="_blank">💬 WhatsApp</a>
         </div>
 
-        <aside>
-          <div style="margin-bottom:12px;text-align:center">
-            <img src="team-photo.jpg" alt="Équipe A+ Conciergerie" style="width:100%;border-radius:10px;object-fit:cover;max-height:220px;" onerror="this.style.display='none'">
-          </div>
-
-          <div class="meta">
-            <div>Conciergerie Premium</div>
-            <small>Qualité • Confiance • Excellence</small>
-          </div>
-
-          <div style="margin-top:14px;font-size:14px;color:#333;">
-            <strong>Zone :</strong>
-            <p>Pointe-Noire (Congo) — Intervention sur toute la ville.</p>
-          </div>
-
-          <div style="margin-top:12px;text-align:center">
-            <a class="btn" href="https://www.instagram.com/aplusconcierge/" target="_blank">Voir sur Instagram</a>
-          </div>
-        </aside>
-      </div>
+        <p style="margin-top:10px;">Ou utilisez le formulaire ci-contre — nous vous répondrons rapidement avec un devis adapté.</p>
+      </section>
     </div>
+
+    <aside>
+      <img src="team-photo.jpg" alt="Équipe A+ Conciergerie" onerror="this.style.display='none'">
+      <div style="text-align:center; font-weight:600; color:#0b132b;">Conciergerie • Qualité • Confiance</div>
+
+      <div style="margin-top:12px;">
+        <strong>Localisation :</strong>
+        <p>Pointe-Noire (Congo) — Intervention sur toute la ville.</p>
+      </div>
+
+      <h3>Demande rapide</h3>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Nom</label>
+        <input id="name" name="name" placeholder="Votre nom" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@mail.com" required>
+        <label for="phone">Téléphone</label>
+        <input id="phone" name="phone" placeholder="+242 06 ..." required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin" required></textarea>
+        <input type="hidden" name="_subject" value="Nouvelle demande - A+ Conciergerie">
+        <button type="submit" class="submit">Envoyer la demande</button>
+      </form>
+
+      <div style="text-align:center;margin-top:15px;">
+        <a class="btn" href="https://www.instagram.com/aplusconcierge/" target="_blank">📸 Voir Instagram</a>
+      </div>
+    </aside>
   </main>
 
   <footer>
-    © <span id="year"></span> A+ Conciergerie — Tous droits réservés • Pointe-Noire, Congo
+    © <span id="year"></span> A+ Conciergerie — Pointe-Noire • Tous droits réservés
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
