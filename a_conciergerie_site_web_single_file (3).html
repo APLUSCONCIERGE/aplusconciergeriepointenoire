@@ -1,0 +1,211 @@
+<!--
+Fichier: index.html
+Description: Site web one-page responsive pour "A+ Conciergerie" (Pointe-Noire)
+Instructions d'utilisation:
+1. Télécharge ce fichier comme `index.html` dans un dossier.
+2. Place le logo fourni sous le nom `logo.png` dans le même dossier.
+3. Pour héberger gratuitement:
+   - Option simple: GitHub Pages -> créer un dépôt, ajouter index.html, activer GitHub Pages.
+   - Option alternative: Netlify ou Vercel (drag & drop ou connexion Git).
+4. Les textes, contacts et liens sont déjà configurés.
+-->
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A+ Conciergerie — Pointe-Noire</title>
+  <meta name="description" content="A+ Conciergerie — Conciergerie premium à Pointe-Noire. Ménage professionnel, gestion d'appartements et location de voitures.">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0b2238;
+      --gold:#d4af37;
+      --white:#ffffff;
+      --muted:#f6f7f8;
+      --card:#ffffff;
+      --text:#233043;
+      --radius:12px;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#ffffff);color:var(--text);-webkit-font-smoothing:antialiased}
+    header{background:var(--navy);color:var(--white);padding:44px 16px 72px;text-align:center;position:relative}
+    .container{max-width:1000px;margin:0 auto;padding:0 20px}
+    .brand{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .brand img{width:110px;height:auto;object-fit:contain;border-radius:14px;background:linear-gradient(180deg,#0b2238, #072034);padding:8px}
+    .brand h1{font-family:'Playfair Display', serif;margin:0;font-size:28px;letter-spacing:0.6px}
+    .slogan{margin-top:8px;color:rgba(255,255,255,0.9)}
+
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 10px 30px rgba(11,34,56,0.08);padding:24px;margin:-48px auto 24px;max-width:1100px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+    h2{color:var(--navy);margin:0 0 12px;font-family:'Playfair Display',serif}
+    p.lead{color:#445a6b;line-height:1.6}
+    ul{padding-left:18px}
+
+    .service-card{border-radius:10px;padding:14px;background:linear-gradient(180deg, #ffffff, #fbfcfd);border:1px solid rgba(0,0,0,0.04)}
+    .service-row{display:flex;gap:12px;align-items:flex-start}
+    .icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg,var(--navy),#073149);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{background:var(--navy);color:var(--white);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--navy)}
+
+    aside{padding:16px;border-left:1px dashed rgba(0,0,0,0.06)}
+    .meta{background:linear-gradient(90deg,var(--gold),#cba93a);padding:12px;border-radius:10px;color:#061c2b;font-weight:700;text-align:center}
+
+    footer{padding:20px;text-align:center;color:#667488;font-size:14px}
+
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef5;margin-top:8px}
+    form label{font-weight:600;font-size:14px}
+    form .submit{background:var(--navy);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;margin-top:10px}
+
+    .topbar{position:absolute;right:20px;top:20px}
+    .socials a{display:inline-block;margin-left:8px;color:var(--gold);text-decoration:none;font-weight:700}
+
+    @media(max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .brand img{width:84px}
+      .card{margin-top:-36px;padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar socials"><a href="https://www.instagram.com/aplusconcierge/" target="_blank" rel="noopener">@aplusconcierge</a></div>
+      <div class="brand">
+        <img src="logo.png" alt="A+ Conciergerie logo">
+        <div>
+          <h1>A+ Conciergerie</h1>
+          <div class="slogan">La propreté, la confiance et le service haut de gamme à Pointe-Noire</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="grid">
+        <div>
+          <section>
+            <h2>Bienvenue chez A+ Conciergerie</h2>
+            <p class="lead">Basée à <strong>Pointe-Noire (Congo)</strong>, A+ Conciergerie est votre partenaire de confiance pour un service complet et haut de gamme. Nous mettons à votre disposition des <strong>femmes de ménage professionnelles</strong>, formées et expérimentées, pour assurer la propreté et le confort de vos maisons et appartements. Notre travail est réalisé avec des produits d'entretien de qualité afin de garantir un intérieur sain et accueillant.</p>
+          </section>
+
+          <section style="margin-top:18px">
+            <h2>Nos services</h2>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px">
+              <div class="service-card">
+                <div class="service-row">
+                  <div class="icon">🧹</div>
+                  <div>
+                    <strong>Ménage complet</strong>
+                    <p style="margin:6px 0 0;color:#546b7a">Prestation sur mesure selon vos besoins. Contactez-nous pour un devis personnalisé.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-row">
+                  <div class="icon">🏡</div>
+                  <div>
+                    <strong>Gestion d'appartements</strong>
+                    <p style="margin:6px 0 0;color:#546b7a">Check-in / Check-out, supervision et entretien pour propriétaires et locations courte durée.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-row">
+                  <div class="icon">🚗</div>
+                  <div>
+                    <strong>Location de voitures</strong>
+                    <p style="margin:6px 0 0;color:#546b7a">Accès à un parc de véhicules via nos partenaires garages de confiance.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-row">
+                  <div class="icon">💼</div>
+                  <div>
+                    <strong>Services complémentaires</strong>
+                    <p style="margin:6px 0 0;color:#546b7a">Interventions ponctuelles, préparation d'appartements pour arrivée de clients, nettoyage approfondi.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section style="margin-top:18px">
+            <h2>Pourquoi nous choisir ?</h2>
+            <ul>
+              <li>Équipe sérieuse, ponctuelle et discrète</li>
+              <li>Produits et équipements professionnels</li>
+              <li>Suivi client personnalisé</li>
+              <li>Partenariats fiables et transparents</li>
+            </ul>
+          </section>
+
+          <section style="margin-top:18px">
+            <h2>Contact & demande de devis</h2>
+            <p>Pour toute demande tarifaire ou réservation, contactez-nous par téléphone, WhatsApp ou e-mail. Nous envoyons un devis personnalisé selon vos besoins.</p>
+
+            <div class="cta">
+              <a class="btn" href="tel:+242065161819">📞 +242 06 516 18 19</a>
+              <a class="btn" href="tel:+33665013646">📞 +33 6 65 01 36 46</a>
+              <a class="btn ghost" href="mailto:jacques96@live.fr">✉️ jacques96@live.fr</a>
+              <a class="btn ghost" href="https://wa.me/242065161819" target="_blank">💬 WhatsApp</a>
+            </div>
+
+            <p style="margin-top:12px;color:#55686f">Ou utilisez le formulaire ci-contre — nous vous répondrons rapidement avec un devis adapté.</p>
+          </section>
+        </div>
+
+        <aside>
+          <div style="margin-bottom:12px;text-align:center">
+            <img src="team-photo.jpg" alt="Équipe A+ Conciergerie" style="width:100%;border-radius:10px;object-fit:cover;max-height:220px;display:block" onerror="this.style.display='none'">
+          </div>
+
+          <div class="meta">Conciergerie • Qualité • Confiance</div>
+
+          <div style="margin-top:14px;font-size:14px;color:#333;">
+            <strong>Localisation</strong>
+            <p>Pointe-Noire (Congo) — Intervention sur toute la ville.</p>
+          </div>
+
+          <div style="margin-top:12px">
+            <h3 style="margin:0 0 8px">Demande rapide</h3>
+            <!-- Form: replace action attribute with your Formspree endpoint or another form handler -->
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <label for="name">Nom</label>
+              <input id="name" name="name" placeholder="Votre nom" required>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@mail.com" required>
+              <label for="phone">Téléphone</label>
+              <input id="phone" name="phone" placeholder="+242 06 ..." required>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin" required></textarea>
+              <input type="hidden" name="_subject" value="Nouvelle demande - A+ Conciergerie">
+              <button type="submit" class="submit">Envoyer la demande</button>
+            </form>
+            <small style="display:block;margin-top:8px;color:#6b7b85">Remplacez le champ <code>action</code> du formulaire avec l'URL fournie par Formspree ou votre solution de formulaire. Si vous préférez un simple mailto, changez l'action par <code>mailto:jacques96@live.fr</code> (ouvre le client mail).</small>
+          </div>
+
+          <div style="margin-top:14px;text-align:center">
+            <a class="btn" href="https://www.instagram.com/aplusconcierge/" target="_blank">Voir Instagram</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> A+ Conciergerie — Pointe-Noire • Tous droits réservés
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
